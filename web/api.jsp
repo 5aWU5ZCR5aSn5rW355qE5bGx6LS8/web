@@ -32,8 +32,13 @@
     switch (method) {
         case "check":
             if (isLogin) {
-                out.write("{\"code\":0,\"res\":" + Wrapper.getWrapper().check() + "}");
-                out.close();
+                try {
+                    out.write("{\"code\":0,\"res\":" + Wrapper.getWrapper().check() + "}");
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    out.close();
+                }
             } else {
                 out.write("{\"code\":-1}");
                 out.close();
@@ -42,10 +47,15 @@
         case "select":
             if (isLogin) {
                 String car = request.getParameter("car");
-                JSONObject object = new JSONObject();
 
-                out.write("{\"code\":0,\"res\":" + Wrapper.getWrapper().select(car) + "}");
-                out.close();
+                try {
+                    out.write("{\"code\":0,\"res\":" + Wrapper.getWrapper().select(car) + "}");
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    out.write("{\"code\":-2}");
+                    out.close();
+                }
             } else {
                 out.write("{\"code\":-1}");
                 out.close();
@@ -54,7 +64,30 @@
         case "simulate":
             if (isLogin) {
                 try {
-                    Simulator.getmSimulator().update();
+                    String command = request.getParameter("cmd");
+                    if (command == null) {
+                        JSONObject object = new JSONObject();
+                        object.put("code", 0);
+                        object.put("run", Simulator.getmSimulator().isRunning());
+                        object.put("time", Simulator.getmSimulator().getT());
+
+                        out.write(object.toString());
+                        out.close();
+                        return;
+                    } else {
+                        switch (command) {
+                            case "step":
+                                Simulator.getmSimulator().step();
+                                break;
+                            case "run":
+                                Simulator.getmSimulator().run();
+                                break;
+                            case "pause":
+                                Simulator.getmSimulator().pause();
+                                break;
+                        }
+                    }
+
                     out.write("{\"code\":0}");
                     out.close();
                 } catch (Exception e) {

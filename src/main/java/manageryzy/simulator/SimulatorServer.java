@@ -20,12 +20,6 @@ public class SimulatorServer extends Simulator {
 
     @Override
     public void onUpdate(ArrayList<Record> results) throws Exception {
-        if (client.isClosed() || !client.isConnected()) {
-            client = new Socket("127.0.0.1",8889);
-        }
-
-        OutputStream out = client.getOutputStream();
-
         JSONArray json = new JSONArray();
         int size = results.size();
         for(int i=0;i<size;i++) {
@@ -46,11 +40,31 @@ public class SimulatorServer extends Simulator {
                 {
                     jsonStr = "[]";
                 }
-                out.write(Base64.getEncoder().encode(jsonStr.getBytes("UTF-8")));
-                out.write('\n');
+
+                send(jsonStr, true);
             }
         }
 
+
+    }
+
+    protected void send(String jsonStr, boolean retry) {
+        try {
+            if (client.isClosed() || !client.isConnected()) {
+                client = new Socket("127.0.0.1", 8889);
+            }
+
+            OutputStream out = client.getOutputStream();
+
+            out.write(Base64.getEncoder().encode(jsonStr.getBytes("UTF-8")));
+            out.write('\n');
+        } catch (IOException e) {
+            e.printStackTrace();
+
+            if (retry) {
+                send(jsonStr, false);
+            }
+        }
 
     }
 }

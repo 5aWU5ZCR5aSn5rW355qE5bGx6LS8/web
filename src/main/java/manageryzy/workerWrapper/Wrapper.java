@@ -1,7 +1,5 @@
 package manageryzy.workerWrapper;
 
-import org.json.JSONException;
-
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -9,7 +7,7 @@ import java.util.ArrayList;
 public class Wrapper {
     static Wrapper wrapper;
 
-    public String select(String car) throws IOException, JSONException {
+    public String select(String car) throws IOException {
         ArrayList<Record> result = new ArrayList<>();
 
         if (car == null) {
@@ -32,6 +30,9 @@ public class Wrapper {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         String line = bufferedReader.readLine();
+        if (line.equals("null")) {
+            line = "[]";
+        }
 //        if (line != null && !line.equals("null")) {
 //            JSONArray jsonArray = new JSONArray(line);
 //
@@ -55,7 +56,7 @@ public class Wrapper {
         return line;
     }
 
-    public String check() throws IOException, JSONException {
+    public String check() throws IOException {
         ArrayList<ResultCheck> result = new ArrayList<>();
 
         Socket socket = new Socket("127.0.0.1", 8900);
@@ -70,6 +71,9 @@ public class Wrapper {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         String line = bufferedReader.readLine();
+        if (line.equals("null")) {
+            line = "[]";
+        }
 
         bufferedReader.close();
         is.close();

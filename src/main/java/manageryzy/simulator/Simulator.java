@@ -5,11 +5,17 @@ import manageryzy.simulator.car.Car;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public abstract class Simulator implements ISimulator{
     ArrayList<Car> cars;
     ArrayList<Record> results;
     int t = 0;
+
+    Timer timer = null;
+    final Lock lock = new Lock();
+    final Lock lock2 = new Lock();
 
     static Simulator mSimulator;
 
@@ -174,5 +180,67 @@ public abstract class Simulator implements ISimulator{
 
     public static void setmSimulator(Simulator mSimulator) {
         Simulator.mSimulator = mSimulator;
+    }
+
+    public void run() {
+        synchronized (lock2) {
+            if (isRunning()) {
+                return;
+            }
+            synchronized (lock) {
+                lock.setSignal(true);
+                timer = new Timer();
+                timer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        try {
+                            update();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        if (!lock.getSig()) {
+                            synchronized (lock) {
+                                lock.notifyAll();
+                                timer.cancel();
+                            }
+                        }
+                    }
+                }, 1000, 1000);
+            }
+        }
+    }
+
+    public void pause() throws InterruptedException {
+        synchronized (lock2) {
+            synchronized (lock) {
+                if (this.isRunning()) {
+                    lock.setSignal(false);
+                    lock.wait();
+                }
+            }
+            timer = null;
+        }
+    }
+
+    public void step() throws Exception {
+        synchronized (lock2) {
+            if (isRunning()) {
+                pause();
+            }
+
+            update();
+        }
+    }
+
+    public boolean isRunning() {
+        synchronized (lock2) {
+            return timer != null;
+        }
+    }
+
+
+    public int getT() {
+        return t;
     }
 }
