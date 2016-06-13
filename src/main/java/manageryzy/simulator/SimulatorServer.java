@@ -20,7 +20,7 @@ public class SimulatorServer extends Simulator {
 
     @Override
     public void onUpdate(ArrayList<Record> results) throws Exception {
-        if(client.isClosed()){
+        if (client.isClosed() || !client.isConnected()) {
             client = new Socket("127.0.0.1",8889);
         }
 
@@ -39,7 +39,7 @@ public class SimulatorServer extends Simulator {
 
             json.put(object);
 
-            if (i % 100 == 0 || i == size - 1) {
+            if (i % 64 == 0 || i == size - 1) {
                 String jsonStr = json.toString();
                 json = new JSONArray();
                 if(jsonStr.isEmpty())
