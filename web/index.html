@@ -3,8 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>车辆稽查系统</title>
+    <link type="text/css" href="lib/MaterialIcon/icon.css" rel="stylesheet">
+    <link type="text/css" href="lib/materialize/css/materialize.min.css" rel="stylesheet" media="screen,projection">
+    <link type="text/css" href="web.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body class="lighten-2 teal" onselectstart="return false" oncontextmenu="return false">
+<div class="valign-wrapper">
+    <div class="valign container row">
+        <div class="col m6 l6 offset-m3 offset-l3">
+            <div class="card-panel hoverable" id="login-panel">
 
+                <div class="row">
+                    <form id="login-form">
+                        <div class="input-field col s10 offset-s1">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="name" type="text" class="validate">
+                            <label for="name">用户名</label>
+                        </div>
+                        <div class="input-field col s10 offset-s1">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="pwd" type="password" class="validate">
+                            <label for="pwd">密码</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col s8 offset-l2">
+                        <button class="btn waves-light disabled " type="submit" id="btn-login-submit">提交
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                        <button class="btn waves-effect waves-light right " type="reset" id="btn-login-reset">清除
+                            <i class="material-icons right">clear_all</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hover valign-wrapper" id="login-holder">
+                    <div class="preloader-wrapper big active valign center-block">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery-3.0.0.min.js"></script>
+<script src="lib/materialize/js/materialize.min.js"></script>
+<script src="web.js"></script>
 </body>
 </html>
