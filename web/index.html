@@ -81,7 +81,7 @@
         <!--welcome-->
         <div class="screen-container" id="page-welcome">
             <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
-                <div class="valign-wrapper full-width">
+                <div class="valign-wrapper full-width full-height">
                     <div class="valign full-width">
                         <ul class="collapsible popout" data-collapsible="accordion">
                             <li>
@@ -107,6 +107,49 @@
         <!--simulate-->
         <div class="screen-container" id="page-simulate">
             <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col m10 l10 white">
+                        <h3>模拟系统</h3>
+
+                        <div class="row">
+                            <div class="col m4 l4">服务器:127.0.0.1</div>
+                            <div class="col m4 l4">本地时间:<i id="simulate-info-local-time">暂停</i></div>
+                            <div class="col m4 l4">服务器状态:正常</div>
+                        </div>
+                        <div class="row">
+                            <div class="col m4 l4">模拟状态：<i id="simulate-info-pause">暂停</i></div>
+                            <div class="col m4 l4">模拟时间：<i id="simulate-info-remote-time">0s</i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <ul class="collection">
+                        <li class="collection-item avatar" onclick="window.car.simulator.run()">
+                            <i class="material-icons circle green">play_arrow</i>
+                            <span class="title">启动</span>
+
+                            <p>持续运行车辆模拟 <br>
+                            </p>
+                        </li>
+                        <li class="collection-item avatar" onclick="window.car.simulator.pause()">
+                            <i class="material-icons circle red">pause</i>
+                            <span class="title">暂停</span>
+
+                            <p>暂停当前的模拟 <br>
+                            </p>
+                        </li>
+                        <li class="collection-item avatar" onclick="window.car.simulator.step()">
+                            <i class="material-icons circle grey">skip_next</i>
+                            <span class="title">单步</span>
+
+                            <p>单步进行模拟 <br>
+                                <i>如果当前模拟正在运行，则会暂停模拟</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -121,8 +164,48 @@
             <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
             </div>
         </div>
+
+        <!--select result-->
+        <div class="screen-container" id="page-select-result">
+            <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+                <div class="row">
+                    <div class="col m10 l10">
+                        <div class="card white">
+                            <div class="card-content">
+                                <span class="card-title">车辆信息</span>
+
+                                <div>
+                                    <canvas class="materialboxed" height="1000" width="1000" id="mapCanvas">
+                                        <h1>Canvas not support</h1>
+                                    </canvas>
+                                </div>
+
+                            </div>
+                            <div class="card-action center-align ">
+                                <a onclick="window.history.back()" class="blue-text">返回</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red disabled">
+        <i class="large material-icons">power_settings_new</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating green disabled" onclick="window.car.simulator.run()"><i class="material-icons">play_arrow</i></a>
+        </li>
+        <li><a class="btn-floating red darken-1 disabled" onclick="window.car.simulator.pause()"><i
+                class="material-icons">pause</i></a></li>
+        <li><a class="btn-floating grey disabled" onclick="window.car.simulator.step()"><i class="material-icons">skip_next</i></a>
+        </li>
+    </ul>
+</div>
+
 
 <script src="lib/jquery-3.0.0.min.js"></script>
 <script src="lib/materialize/js/materialize.min.js"></script>
