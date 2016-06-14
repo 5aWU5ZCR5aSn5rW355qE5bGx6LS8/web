@@ -17,6 +17,11 @@ body, html, .full-height {
   height: 100%;
 }
 
+body {
+  background: url("img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 .full-height {
   position: relative;
 }
@@ -49,7 +54,8 @@ body, html, .full-height {
 }
 
 #nav {
-  background-color: #fff;
+  //background-color: #fff;
+  background-color: #e1bee7;
   overflow-y: visible;
   left: -100%;
   button {
@@ -66,3 +72,8 @@ body, html, .full-height {
 #mapCanvas {
   max-width: 100%;
 }
+
+.row .btn-long {
+  padding-top: 0.75rem;
+}
+

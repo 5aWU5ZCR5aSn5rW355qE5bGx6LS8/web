@@ -118,21 +118,30 @@ $(document).ready(function () {
 
     window.car.manage = new function () {
         this.hashChange = function () {
-            window.car.manage.hideAll(function () {
-                var hash = window.location.hash;
-                if (hash == "#page-welcome") {
+            var hash = window.location.hash;
+            if (hash == "#page-welcome") {
+                $("#page-check,#page-select,#page-simulate,#page-select-result").fadeOut(200, function () {
                     $("#page-welcome").fadeIn(500);
-                } else if (hash == "#page-simulate") {
+                });
+            } else if (hash == "#page-simulate") {
+                $("#page-check,#page-select,#page-welcome,#page-select-result").fadeOut(200, function () {
                     $("#page-simulate").fadeIn(500);
-                } else if (hash == "#page-check") {
+                });
+            } else if (hash == "#page-check") {
+                $("#page-select,#page-simulate,#page-welcome,#page-select-result").fadeOut(200, function () {
                     $("#page-check").fadeIn(500);
-                } else if (hash == "#page-select") {
+                });
+            } else if (hash == "#page-select") {
+                $("#page-check,#page-simulate,#page-welcome,#page-select-result").fadeOut(200, function () {
                     $("#page-select").fadeIn(500);
-                } else if (hash.split(':', 1)[0] == "#page-result") {
-                    window.car.selector.sel();
+                });
+            } else if (hash.split(':', 1)[0] == "#page-result") {
+                window.car.selector.sel();
+                $("#page-check,#page-select,#page-simulate,#page-welcome").fadeOut(200, function () {
                     $("#page-select-result").fadeIn(500);
-                }
-            });
+                });
+
+            }
         };
 
         this.hideAll = function (callback) {
@@ -370,8 +379,8 @@ $(document).ready(function () {
                 var color = Math.floor(i / pt.length * 255);
                 ctx.strokeStyle = "rgb(" + (255 - color) + "," + color + ",0)";
                 ctx.beginPath();
-                ctx.moveTo(pt[i - 1]['x'] / 250, pt[i - 1]['y'] / 250);
-                ctx.lineTo(pt[i]['x'] / 250, pt[i]['y'] / 250);
+                ctx.moveTo(pt[i - 1]['x'] / 25, pt[i - 1]['y'] / 25);
+                ctx.lineTo(pt[i]['x'] / 25, pt[i]['y'] / 25);
                 ctx.stroke();
             }
 
@@ -379,7 +388,7 @@ $(document).ready(function () {
                 var color = Math.floor(i / pt.length * 255);
                 ctx.fillStyle = "rgba(" + (255 - color) + "," + color + ",0,0.8)";
                 ctx.beginPath();
-                ctx.arc(pt[i]['x'] / 250, pt[i]['y'] / 250, 5, 0, Math.PI * 2, true);
+                ctx.arc(pt[i]['x'] / 25, pt[i]['y'] / 25, 5, 0, Math.PI * 2, true);
                 ctx.fill();
             }
 

@@ -12,7 +12,7 @@
 <div class="valign-wrapper screen-container">
     <div class="valign container row">
         <div class="col m6 l6 offset-m3 offset-l3">
-            <div class="card-panel hoverable" id="login-panel">
+            <div class="card-panel hoverable " id="login-panel">
 
                 <div class="row">
                     <form id="login-form">
@@ -64,16 +64,16 @@
     <div class="col m3 l3 full-height">
         <div class="screen-container" id="nav">
             <a href="#page-simulate">
-                <button class="btn waves-effect waves-light">模拟系统</button>
+                <button class="btn waves-effect waves-light purple lighten-2">模拟系统</button>
             </a>
             <a href="#page-check">
-                <button class="btn waves-effect waves-light">稽查系统</button>
+                <button class="btn waves-effect waves-light purple lighten-2">稽查系统</button>
             </a>
             <a href="#page-select">
-                <button class="btn waves-effect waves-light">查询系统</button>
+                <button class="btn waves-effect waves-light purple lighten-2">查询系统</button>
             </a>
             <a href="#page-welcome">
-                <button class="btn waves-effect waves-light">帮助</button>
+                <button class="btn waves-effect waves-light purple lighten-2">帮助</button>
             </a>
         </div>
     </div>
@@ -85,16 +85,25 @@
                     <div class="valign full-width">
                         <ul class="collapsible popout" data-collapsible="accordion">
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                                <div class="collapsible-header active"><i class="material-icons">info</i>欢迎</div>
+                                <div class="collapsible-body grey lighten-4"><p>欢迎使用车辆套牌智能稽查系统，
+                                    请在左侧导航栏选择任务</p></div>
                             </li>
                             <li>
-                                <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
-                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                                <div class="collapsible-header "><i class="material-icons">info_outline</i>模拟功能</div>
+                                <div class="collapsible-body grey lighten-4"><p>在模拟系统里面可以模拟车辆的运动。
+                                    控制模拟系统可以通过模拟“模拟系统”页面的按钮或者右下角的悬浮按钮进行。<br>
+                                    <i>注意：模拟可能对系统造成过量负载，由于服务器磁盘有限，请勿保持模拟系统一直运行。</i>
+                                </p></div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                                <div class="collapsible-header"><i class="material-icons">info_outline</i>稽查系统</div>
+                                <div class="collapsible-body grey lighten-4"><p>稽查系统可以实时对套牌车进行稽查。
+                                    对于数据不足的车辆可能无法即时稽查出来（大约需要一分钟的数据）</p></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">info_outline</i>查询系统</div>
+                                <div class="collapsible-body grey lighten-4"><p>查询系统可以画出车辆实时的路线图。图像中每格代表2.5km</p></div>
                             </li>
                         </ul>
                     </div>
@@ -124,31 +133,50 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <ul class="collection">
-                        <li class="collection-item avatar" onclick="window.car.simulator.run()">
-                            <i class="material-icons circle green">play_arrow</i>
-                            <span class="title">启动</span>
+                <div class="row white">
+                    <div class="row">
+                        <div class="col m12 l12  waves-green waves-effect waves-light white btn-long"
+                             onclick="window.car.simulator.run()">
+                            <div class="col ">
+                                <i class="material-icons circle green medium">play_arrow</i>
+                            </div>
+                            <div class="col">
+                                <span class="title">启动</span>
 
-                            <p>持续运行车辆模拟 <br>
-                            </p>
-                        </li>
-                        <li class="collection-item avatar" onclick="window.car.simulator.pause()">
-                            <i class="material-icons circle red">pause</i>
-                            <span class="title">暂停</span>
+                                <p>持续运行车辆模拟 <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col  m12 l12  waves-red waves-effect waves-light btn-long"
+                             onclick="window.car.simulator.pause()">
+                            <div class="col ">
+                                <i class="material-icons circle red medium">pause</i>
+                            </div>
+                            <div class="col">
+                                <span class="title">暂停</span>
 
-                            <p>暂停当前的模拟 <br>
-                            </p>
-                        </li>
-                        <li class="collection-item avatar" onclick="window.car.simulator.step()">
-                            <i class="material-icons circle grey">skip_next</i>
-                            <span class="title">单步</span>
+                                <p>暂停当前的模拟 <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m12 l12 waves-yellow waves-effect waves-light btn-long"
+                             onclick="window.car.simulator.step()">
+                            <div class="col ">
+                                <i class="material-icons circle grey medium">skip_next</i>
+                            </div>
+                            <div class="col">
+                                <span class="title">单步</span>
 
-                            <p>单步进行模拟 <br>
-                                <i>如果当前模拟正在运行，则会暂停模拟</i>
-                            </p>
-                        </li>
-                    </ul>
+                                <p>单步进行模拟 <br>
+                                    <i>如果当前模拟正在运行，则会暂停模拟</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
