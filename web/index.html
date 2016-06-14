@@ -156,6 +156,39 @@
         <!--check-->
         <div class="screen-container" id="page-check">
             <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col m10 l10">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>稽查系统</h3>
+
+                                <p>点击下面的稽查按钮可以立刻进行稽查，注意，如果数据不足（不足五分钟）可能不能查出套牌车。<br>
+                                    稽查的过程可能消耗大量资源。请勿过频繁的进行稽查。
+                                </p>
+
+                                <div class="card-action center-align">
+                                    <button class="btn waves-effect waves-light red"
+                                            onclick="window.car.checker.check()">立刻稽查
+                                    </button>
+                                </div>
+
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>稽查结果
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <div class="rol" id="check-res"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 

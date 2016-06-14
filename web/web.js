@@ -253,7 +253,44 @@ $(document).ready(function () {
 
         this.check = function () {
             if (enabled) {
-                //TODO:
+                window.car.checker.disable();
+                $.getJSON("api.jsp?method=check", function (res) {
+                    window.car.checker.enable();
+
+                    if (res['code'] == 0) {
+                        var html = "";
+                        for (var i = 0; i < res['res'].length; i++) {
+                            var car = res['res'][i]['c'];
+                            var r = res['res'][i]['c'];
+
+                            if (r == 1) {
+                                r = '速度过快';
+                            } else if (r == 2) {
+                                r = '速度过慢';
+                            } else if (r == 4) {
+                                r = '同时出现';
+                            }
+                            if (i % 3 == 0) {
+                                html += '<div class="row">';
+                            }
+                            html += '<div class="col m4 l4"><a class="btn" href="#page-result:' + car + '">' + car + '</a></div>'
+                            if (i % 3 == 2) {
+                                html += '</div>';
+                            }
+                        }
+
+                        if (res['res'].length % 3 != 2) {
+                            html += '</div>';
+                        }
+
+                        $("#check-res").html(html);
+                    } else {
+                        Materialize.toast('服务器异常，稽查失败', 3000, 'rounded');
+                    }
+                }).fail(function () {
+                    Materialize.toast('服务器通讯故障，稽查失败', 3000, 'rounded');
+                    window.car.checker.enable();
+                })
             }
         }
     };
