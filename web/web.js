@@ -129,6 +129,7 @@ $(document).ready(function () {
                 } else if (hash == "#page-select") {
                     $("#page-select").fadeIn(500);
                 } else if (hash.split(':', 1)[0] == "#page-result") {
+                    window.car.selector.sel();
                     $("#page-select-result").fadeIn(500);
                 }
             });
@@ -313,13 +314,74 @@ $(document).ready(function () {
             }
         };
 
+        this.sel = function (e) {
+            if (e !== undefined) {
+                window.location.hash = "#page-result:" + e;
+                return;
+            }
+
+            var car = window.location.hash.split(':')[1];
+            if (car === undefined) {
+                window.history.back();
+                return;
+            }
+
+            $.getJSON("api.jsp?method=select&car=" + car, function (res) {
+                if (res['code'] != 0) {
+                    Materialize.toast('服务器故障，无法获得信息', 3000, 'rounded');
+                }
+
+                window.car.selector.drawMap(res['res']);
+            }).fail(function () {
+                Materialize.toast('服务器通讯故障，无法获得信息', 3000, 'rounded');
+                window.history.back();
+            });
+        };
+
+        $("#btn-select").click(function () {
+            var car = $("#car").val();
+            window.car.selector.sel(car);
+        });
+
         var mapSize = $("#mapCanvas").parent().width();
         var scale = mapSize / 1000;
         $("#mapCanvas").css({"scale:": scale});
 
         this.drawMap = function (pt) {
             ctx.fillStyle = "#FFFFFF";
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 1;
             ctx.fillRect(0, 0, 1000, 1000);
+
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    ctx.strokeRect(100 * i, 100 * j, 100, 100);
+                }
+            }
+
+            if (pt.length == 0) {
+                return;
+            }
+
+
+            ctx.lineWidth = 3;
+
+            for (var i = 1; i < pt.length; i++) {
+                var color = Math.floor(i / pt.length * 255);
+                ctx.strokeStyle = "rgb(" + (255 - color) + "," + color + ",0)";
+                ctx.beginPath();
+                ctx.moveTo(pt[i - 1]['x'] / 250, pt[i - 1]['y'] / 250);
+                ctx.lineTo(pt[i]['x'] / 250, pt[i]['y'] / 250);
+                ctx.stroke();
+            }
+
+            for (var i = 0; i < pt.length; i++) {
+                var color = Math.floor(i / pt.length * 255);
+                ctx.fillStyle = "rgba(" + (255 - color) + "," + color + ",0,0.8)";
+                ctx.beginPath();
+                ctx.arc(pt[i]['x'] / 250, pt[i]['y'] / 250, 5, 0, Math.PI * 2, true);
+                ctx.fill();
+            }
 
 
         };

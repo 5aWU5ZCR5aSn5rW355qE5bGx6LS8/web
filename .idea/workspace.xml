@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4282705d-ef66-445a-a4e1-c7b4c0d04be4" name="Default" comment="模拟系统就绪&#10;">
+    <list default="true" id="4282705d-ef66-445a-a4e1-c7b4c0d04be4" name="Default" comment="完成了吧，大概（">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.js" afterPath="$PROJECT_DIR$/web/web.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -30,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.75">
-              <caret line="170" column="83" selection-start-line="170" selection-start-column="83" selection-end-line="170" selection-end-column="83" />
+            <state vertical-scroll-proportion="-6.571429">
+              <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -42,8 +42,8 @@
       <file leaf-file-name="web.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49315068">
-              <caret line="289" column="37" selection-start-line="289" selection-start-column="37" selection-end-line="289" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.28405797">
+              <caret line="315" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,8 +85,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="稽查系统完成" />
         <option value="manageryzy@gmail.com" />
+        <option value="稽查系统完成" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -714,7 +714,7 @@
       <workItem from="1465734623802" duration="23837000" />
       <workItem from="1465781488364" duration="18657000" />
       <workItem from="1465828375725" duration="790000" />
-      <workItem from="1465829204594" duration="27974000" />
+      <workItem from="1465829204594" duration="32294000" />
     </task>
     <task id="LOCAL-00001" summary="基本的车辆模拟完成">
       <created>1465760947795</created>
@@ -752,11 +752,23 @@
       <option name="project" value="LOCAL" />
       <updated>1465881327235</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="稽查系统完成">
+      <created>1465883381539</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1465883381539</updated>
+    </task>
+    <task id="LOCAL-00008" summary="完成了吧，大概（">
+      <created>1465887746422</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1465887746422</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71258000" />
+    <option name="totallyTimeSpent" value="75578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,7 +792,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39052287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39052287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -818,7 +830,9 @@
     <MESSAGE value="前端登陆界面完成！" />
     <MESSAGE value="导航界面基本完成" />
     <MESSAGE value="模拟系统就绪&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="模拟系统就绪&#10;" />
+    <MESSAGE value="稽查系统完成" />
+    <MESSAGE value="完成了吧，大概（" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了吧，大概（" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1048,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.75">
-          <caret line="170" column="83" selection-start-line="170" selection-start-column="83" selection-end-line="170" selection-end-column="83" />
+        <state vertical-scroll-proportion="-6.571429">
+          <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -1058,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/web.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49315068">
-          <caret line="289" column="37" selection-start-line="289" selection-start-column="37" selection-end-line="289" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.28405797">
+          <caret line="315" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
           <folding />
         </state>
       </provider>
