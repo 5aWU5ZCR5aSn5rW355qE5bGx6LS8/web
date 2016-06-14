@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4282705d-ef66-445a-a4e1-c7b4c0d04be4" name="Default" comment="能用的API！准备做UI了">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/web.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/web.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+    <list default="true" id="4282705d-ef66-445a-a4e1-c7b4c0d04be4" name="Default" comment="前端登陆界面完成！">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.js" afterPath="$PROJECT_DIR$/web/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.scss" afterPath="$PROJECT_DIR$/web/web.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="web.iws" />
@@ -36,8 +31,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.928571">
-              <caret line="37" column="116" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="116" />
+            <state vertical-scroll-proportion="-43.214287">
+              <caret line="112" column="66" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -46,18 +41,8 @@
       <file leaf-file-name="web.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28405797">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/api.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.785714">
-              <caret line="22" column="48" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.6144928">
+              <caret line="115" column="95" selection-start-line="115" selection-start-column="95" selection-end-line="115" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -66,8 +51,8 @@
       <file leaf-file-name="web.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/web.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3571428">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            <state vertical-scroll-proportion="-15.392858">
+              <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -717,7 +702,7 @@
       <workItem from="1465734623802" duration="23837000" />
       <workItem from="1465781488364" duration="18657000" />
       <workItem from="1465828375725" duration="790000" />
-      <workItem from="1465829204594" duration="9915000" />
+      <workItem from="1465829204594" duration="18728000" />
     </task>
     <task id="LOCAL-00001" summary="基本的车辆模拟完成">
       <created>1465760947795</created>
@@ -737,11 +722,17 @@
       <option name="project" value="LOCAL" />
       <updated>1465819614803</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="前端登陆界面完成！">
+      <created>1465840762901</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1465840762901</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53199000" />
+    <option name="totallyTimeSpent" value="62012000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,7 +791,8 @@
     <MESSAGE value="基本的车辆模拟完成" />
     <MESSAGE value="基本程度的API&#10;TODO:对于模拟器定时等功能进行细化" />
     <MESSAGE value="能用的API！准备做UI了" />
-    <option name="LAST_COMMIT_MESSAGE" value="能用的API！准备做UI了" />
+    <MESSAGE value="前端登陆界面完成！" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端登陆界面完成！" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -914,6 +906,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16267124">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,34 +1000,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/web.scss">
+    <entry file="file://$PROJECT_DIR$/web/api.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        <state vertical-scroll-proportion="-2.8170347">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/api.jsp">
+    <entry file="file://$PROJECT_DIR$/web/web.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.785714">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="48" />
+        <state vertical-scroll-proportion="-15.392858">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.928571">
-          <caret line="37" column="116" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="116" />
+        <state vertical-scroll-proportion="-43.214287">
+          <caret line="112" column="66" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/web.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28405797">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6144928">
+          <caret line="115" column="95" selection-start-line="115" selection-start-column="95" selection-end-line="115" selection-end-column="95" />
           <folding />
         </state>
       </provider>

@@ -35,6 +35,7 @@ $(document).ready(function () {
                     } else {
                         Materialize.toast('登录成功', 3000, 'rounded');
                         window.car.loginDialog.hide();
+                        window.car.manage.show();
                     }
                 }).fail(function () {
                     window.car.loginDialog.enable();
@@ -85,10 +86,50 @@ $(document).ready(function () {
         $("#btn-login-reset").click(function () {
             $("#name").val("");
             $("#pwd").val("");
-            this.onchange();
+            window.car.loginDialog.onchange();
         });
 
         this.show();
         this.enable();
     };
+
+    window.car.manage = new function () {
+        this.hashChange = function () {
+            window.car.manage.hideAll(function () {
+                var hash = window.location.hash;
+                if (hash == "#page-welcome") {
+                    $("#page-welcome").fadeIn(500);
+                } else if (hash == "#page-simulate") {
+                    $("#page-simulate").fadeIn(500);
+                } else if (hash == "#page-check") {
+                    $("#page-check").fadeIn(500);
+                } else if (hash == "#page-select") {
+                    $("#page-select").fadeIn(500);
+                }
+            });
+        };
+
+        this.hideAll = function (callback) {
+            if (callback === undefined) {
+                $("#page-check,#page-select,#page-simulate,#page-welcome").fadeOut(200);
+            } else {
+                $("#page-check,#page-select,#page-simulate,#page-welcome").fadeOut(200, callback);
+            }
+        };
+
+        this.show = function () {
+            $("#manage-page").fadeIn(1000);
+            $("#nav").animate({"left": 0}, 1000);
+            window.location.hash = "#page-welcome";
+        };
+
+
+    };
+
+    window.onhashchange = window.car.manage.hashChange;
+
+    $('.collapsible').collapsible({
+        accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+
 });

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body class="lighten-2 teal" onselectstart="return false" oncontextmenu="return false">
-<div class="valign-wrapper">
+<div class="valign-wrapper screen-container">
     <div class="valign container row">
         <div class="col m6 l6 offset-m3 offset-l3">
             <div class="card-panel hoverable" id="login-panel">
@@ -55,6 +55,70 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="screen-container row" id="manage-page">
+    <div class="col m3 l3 full-height">
+        <div class="screen-container" id="nav">
+            <a href="#page-simulate">
+                <button class="btn waves-effect waves-light">模拟系统</button>
+            </a>
+            <a href="#page-check">
+                <button class="btn waves-effect waves-light">稽查系统</button>
+            </a>
+            <a href="#page-select">
+                <button class="btn waves-effect waves-light">查询系统</button>
+            </a>
+            <a href="#page-welcome">
+                <button class="btn waves-effect waves-light">帮助</button>
+            </a>
+        </div>
+    </div>
+    <div class="col m9 l9 full-height">
+        <!--welcome-->
+        <div class="screen-container" id="page-welcome">
+            <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+                <div class="valign-wrapper full-width">
+                    <div class="valign full-width">
+                        <ul class="collapsible popout" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
+                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                <div class="collapsible-body grey lighten-4"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--simulate-->
+        <div class="screen-container" id="page-simulate">
+            <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+            </div>
+        </div>
+
+        <!--check-->
+        <div class="screen-container" id="page-check">
+            <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
+            </div>
+        </div>
+
+        <!--select-->
+        <div class="screen-container" id="page-select">
+            <div class="col m10 l10 offset-m1 offset-l1 full-height scroll">
             </div>
         </div>
     </div>
