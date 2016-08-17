@@ -87,6 +87,9 @@ $(document).ready(function () {
         $("#name").keydown(function () {
             name = $(this).val();
             window.car.loginDialog.onchange();
+        }).change(function(){
+            name = $(this).val();
+            window.car.loginDialog.onchange();
         });
 
         $("#pwd").keydown(function (e) {
@@ -96,6 +99,9 @@ $(document).ready(function () {
             if (e.keyCode == 13) {
                 window.car.loginDialog.login();
             }
+        }).change(function(){
+            pwd = $(this).val();
+            window.car.loginDialog.onchange();
         });
 
         $("#btn-login-submit").click(function () {
@@ -104,11 +110,16 @@ $(document).ready(function () {
 
         $("#login-form").submit(function () {
             window.car.loginDialog.login();
+        }).on("reset",function(){
+            name = $(this).val();
+            pwd = $(this).val();
+            window.car.loginDialog.onchange();
         });
 
         $("#btn-login-reset").click(function () {
             $("#name").val("");
             $("#pwd").val("");
+            name = pwd = "";
             window.car.loginDialog.onchange();
         });
 
